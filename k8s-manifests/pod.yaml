@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: no-auth-metrics-app
+  labels:
+    app: no-auth-metrics
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: no-auth-metrics
+  template:
+    metadata:
+      labels:
+        app: no-auth-metrics
+    spec:
+      containers:
+        - name: no-auth-metrics-app
+          image: bradtho/no-auth-metrics-app:latest   # <-- replace with your image
+          ports:
+            - containerPort: 8080

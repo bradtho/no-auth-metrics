@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: no-auth-metrics-service
+  labels:
+    app: no-auth-metrics
+spec:
+  selector:
+    app: no-auth-metrics
+  ports:
+    - name: metrics
+      protocol: TCP
+      port: 8080       # Service port
+      targetPort: 8080 # Container port
