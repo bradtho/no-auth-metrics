@@ -19,3 +19,5 @@ spec:
           image: bradtho/no-auth-metrics-app:latest   # <-- replace with your image
           ports:
             - containerPort: 8080
+            - containerPort: 8081
+            - containerPort: 8082

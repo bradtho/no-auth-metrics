@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: multi-metrics-sm
+  labels:
+    release: prometheus  # adjust to match your Prometheus install
+spec:
+  selector:
+    matchLabels:
+      app: multi-metrics
+  endpoints:
+    - port: metrics1
+      path: /metrics1
+      interval: 30s
+    - port: metrics2
+      path: /metrics2
+      interval: 30s
